@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "f5e7d8c9-a1b2-3c4d-5e6f-7a8b9c0d1e2f",
+		"name": "Casa de Poker API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Player",
+			"item": [
+				{
+					"name": "Get Player by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/player/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"1"
+							]
+						},
+						"description": "Busca um jogador pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Roberto Almeida\",\n    \"email\": \"roberto.almeida@email.com\",\n    \"chips\": 2500.0,\n    \"pokerChips\": 1250\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player"
+							]
+						},
+						"description": "Cria um novo jogador"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Player",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"João Silva Atualizado\",\n    \"email\": \"joao.silva.novo@email.com\",\n    \"chips\": 1500.0,\n    \"pokerChips\": 750\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/player/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"1"
+							]
+						},
+						"description": "Atualiza um jogador existente"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Player",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/player/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player",
+								"1"
+							]
+						},
+						"description": "Exclui um jogador"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/player",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"player"
+							]
+						},
+						"description": "Lista todos os jogadores"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tournament",
+			"item": [
+				{
+					"name": "Get Tournament by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tournament/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tournament",
+								"1"
+							]
+						},
+						"description": "Busca um torneio pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Tournament",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Torneio Final de Semana\",\n    \"entryFee\": 300.0,\n    \"prizePool\": 6000.0,\n    \"reentryAllowed\": true,\n    \"players\": [\n        {\"id\": 1},\n        {\"id\": 2}\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/tournament",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tournament"
+							]
+						},
+						"description": "Cria um novo torneio"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tournament Players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tournament/1/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tournament",
+								"1",
+								"players"
+							]
+						},
+						"description": "Lista os jogadores de um torneio específico"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Player to Tournament",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tournament/1/players/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tournament",
+								"1",
+								"players",
+								"3"
+							]
+						},
+						"description": "Adiciona um jogador a um torneio"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dealer",
+			"item": [
+				{
+					"name": "Get Dealer by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dealer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dealer",
+								"1"
+							]
+						},
+						"description": "Busca um dealer pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Dealer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fernanda Lima\",\n    \"salary\": 2800.0\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/dealer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dealer"
+							]
+						},
+						"description": "Cria um novo dealer"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
